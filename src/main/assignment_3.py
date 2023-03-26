@@ -87,6 +87,20 @@ def L_fact(A, U):
     return L
 # End of Question 4
 
+# Question 5
+#
+def isDiagDom(A):
+    n = len(A)
+    
+    for i in range(n):
+        sum = -abs(A[i][i])
+        for j in range(n):
+            sum += abs(A[i][j])
+        if (sum > abs(A[i][i])):
+            return False
+    return True
+# End of Question 5
+
 def main():
     # Starting information for Question 1 and 2
     start_t = 0
@@ -123,5 +137,13 @@ def main():
     
     print(U, end = '\n\n')
     
-
+    # Initializing matrix for diagonally dominant testing
+    matrix_diagDom = np.array([[9, 0, 5, 2, 1],
+                               [3, 9, 1, 2, 1],
+                               [0, 1, 7, 2, 3],
+                               [4, 2, 3, 12, 2],
+                               [3, 2, 4, 0, 8]])
+    
+    print(isDiagDom(matrix_diagDom), end = '\n\n')
+    
 main()
