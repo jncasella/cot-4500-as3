@@ -89,7 +89,7 @@ def BackSubstitution(A):
             sum += A[n-i-1][j] * x[j]
         x[n-i-1] = (A[n-i-1][n] - sum) / A[n-i-1][n-i-1]
 
-    return x.astype(int)
+    return x
 # End of Question 3
 
 # Question 4
@@ -183,10 +183,10 @@ def main():
     num_iter = 10
 
     # Printing result of Euler method
-    print(Euler(start_t, end_t, w, num_iter), end = '\n\n')
+    print("%.5f" % Euler(start_t, end_t, w, num_iter), end = '\n\n')
 
     # Printing result of Runge-Kutta method
-    print(RungeKutta(start_t, end_t, w, num_iter), end = '\n\n')
+    print("%.5f" % RungeKutta(start_t, end_t, w, num_iter), end = '\n\n')
 
     # Initializing matrix for Gaussian Elimination
     A_b = np.array([[2., -1, 1, 6],
@@ -205,7 +205,7 @@ def main():
     U = matrix_LU.copy()
     
     # Prints the determinant of the matrix_LU matrix
-    print(Determinant(matrix_LU, 0), end = '\n\n')
+    print("%.5f" % Determinant(matrix_LU, 0), end = '\n\n')
     
     # Performs Gaussian elimination on the matrix_LU matrix to find
     #       the U matrix for LU factorization
